@@ -25,14 +25,40 @@
             <router-link to="/about">about</router-link>
           </li>
           <li class="contact-me-cta">
-            <a href="#">contact me</a>
+            <a v-on:click="toggleContactForm">contact me</a>
           </li>
         </ul>
       </nav>
     </div>
   </div>
   <router-view />
+  <div id="contact-form" :style="{top: contactFormTop}">
+    <h1>let's get this done!</h1>
+    <img v-on:click="toggleContactForm" src="@/assets/form-exit.svg" alt="close contact form">
+  </div>
 </template>
+
+<script>
+export default {
+  name: "CodeDisplay",
+  data() {
+    return {
+      contactFormVisible: false,
+    };
+  },
+  methods: {
+    toggleContactForm() {
+      this.contactFormVisible = !this.contactFormVisible;     
+    },
+  },
+  computed: {
+    contactFormTop() {
+      return this.contactFormVisible ? "50%" : "-50%";
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
@@ -59,6 +85,7 @@ body {
   text-align: center;
   background: var(--background-color);
   height: 100vh;
+  color: var(--primary-color);
 }
 
 .navbar {
@@ -116,6 +143,10 @@ ul {
   padding: 0.44em 1.34em;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4rem;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .mobile-menu-exit {
@@ -124,5 +155,38 @@ ul {
 
 .mobile-menu {
   display: none;
+}
+
+#contact-form {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+  width: 37em;
+  height: 44em;
+  padding: 2.5em 4.2em;
+
+  background: #2D2D2A;
+  border: 3px solid #FEA82F;
+  box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.29);
+  border-radius: 1.13em;
+
+  transition: 0.3s ease;
+
+  h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 1.75rem;
+  }
+
+  img {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+
+    &:hover {
+      cursor:pointer;
+    }
+  }
 }
 </style>
