@@ -36,6 +36,7 @@
     <h1>let's get this done!</h1>
     <img v-on:click="toggleContactForm" src="@/assets/form-exit.svg" alt="close contact form">
   </div>
+  <div v-if="contactFormVisible" id="contact-form-bg"></div>
 </template>
 
 <script>
@@ -159,6 +160,7 @@ ul {
 
 #contact-form {
   position: absolute;
+  z-index: 10;
   left: 50%;
   top: -50%;
   transform: translate(-50%, -50%);
@@ -188,5 +190,16 @@ ul {
       cursor:pointer;
     }
   }
+}
+
+#contact-form-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.3s ease;
 }
 </style>
