@@ -7,6 +7,35 @@
       </div>
       <img src="@/assets/me.jpg" alt="Me" />
     </section>
+   
+    <section class="work">
+      <section class="work-example">
+        <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
+        <div class="work-text">
+          <h2>codefast.app</h2>
+          <p>touch typing trainer for coders</p>
+          <ul>
+            <li>train special keys used in programming</li>
+            <li>track time and words per minute</li>
+            <li>user account management</li>
+            <li>global leaderboards</li>
+          </ul>
+        </div>
+      </section>
+      <section class="work-example right">
+        <div class="work-text">
+          <h2>codefast.app</h2>
+          <p>touch typing trainer for coders</p>
+          <ul>
+            <li>train special keys used in programming</li>
+            <li>track time and words per minute</li>
+            <li>user account management</li>
+            <li>global leaderboards</li>
+          </ul>
+        </div>
+        <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
+      </section>
+    </section>
   </div>
 </template>
 
@@ -30,13 +59,13 @@ export default {
 }
 
 .home {
-  background: #21211e;
   text-align: left;
   color: var(--primary-color);
 }
 
 .hero {
-  padding: 10.5em 20.3em;
+  background: #21211e;
+  padding: 10.5em 15%;
   display: flex;
   gap: 19em;
   place-content: space-between;
@@ -63,5 +92,38 @@ export default {
     text-transform: uppercase;
     padding-top: 0.5em;
   }
+}
+
+.work {
+  padding: 7em 15%;
+}
+
+.work-example {
+  padding: 3.5em 0;
+  gap: 3.2em;
+  display: flex;
+
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0;
+    letter-spacing: 0.185em;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    // padding-top: 0.5em;
+  }
+
+  ul {
+    font-size: 1.25rem;
+  }
+}
+
+.right{
+  justify-content: right;
 }
 </style>

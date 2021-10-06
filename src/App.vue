@@ -1,49 +1,55 @@
 <template>
   <div class="navbar">
-    <div class="container">
-      <router-link to="/" class="logo">niklas luehr</router-link>
+    <router-link to="/" class="logo">niklas luehr</router-link>
 
+    <img
+      id="mobile-cta"
+      class="mobile-menu"
+      src="@/assets/menu.svg"
+      alt="Open Navigation"
+    />
+
+    <nav>
       <img
-        id="mobile-cta"
-        class="mobile-menu"
-        src="@/assets/menu.svg"
-        alt="Open Navigation"
+        id="mobile-exit"
+        class="mobile-menu-exit"
+        src="@/assets/exit.svg"
+        alt="Close Navigation"
       />
-
-      <nav>
-        <img
-          id="mobile-exit"
-          class="mobile-menu-exit"
-          src="@/assets/exit.svg"
-          alt="Close Navigation"
-        />
-        <ul class="navigation">
-          <li>
-            <router-link to="/" class="current">work</router-link>
-          </li>
-          <li>
-            <router-link to="/about">about</router-link>
-          </li>
-          <li>
-            <a class="button-cta" v-on:click="toggleContactForm">contact me</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <ul class="navigation">
+        <li>
+          <router-link to="/" class="current">work</router-link>
+        </li>
+        <li>
+          <router-link to="/about">about</router-link>
+        </li>
+        <li>
+          <a class="button-cta" v-on:click="toggleContactForm">contact me</a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <router-view />
 
-  <div id="contact-form" :style="{top: contactFormTop}">
+  <div id="contact-form" :style="{ top: contactFormTop }">
     <h1>let's get this done!</h1>
-    <img v-on:click="toggleContactForm" src="@/assets/form-exit.svg" alt="close contact form">
-    <label for="name">name</label><br>
-    <input type="text" id="name" v-model="name" placeholder="Your Name"><br>
-    <label for="email">email</label><br>
-    <input type="email" id="email" v-model="email" placeholder="Your E-Mail"><br>
-    <label for="message">message</label><br>   
-    <textarea id="message" v-model="message" placeholder="Your Message"/><br>
+    <img
+      v-on:click="toggleContactForm"
+      src="@/assets/form-exit.svg"
+      alt="close contact form"
+    />
+    <label for="name">name</label><br />
+    <input type="text" id="name" v-model="name" placeholder="Your Name" /><br />
+    <label for="email">email</label><br />
+    <input
+      type="email"
+      id="email"
+      v-model="email"
+      placeholder="Your E-Mail"
+    /><br />
+    <label for="message">message</label><br />
+    <textarea id="message" v-model="message" placeholder="Your Message" /><br />
     <a class="button-cta" v-on:click="toggleContactForm">send request</a>
-   
   </div>
   <div v-if="contactFormVisible" id="contact-form-bg"></div>
 </template>
@@ -56,20 +62,20 @@ export default {
       contactFormVisible: false,
       name: "",
       email: "",
-      message: ""
+      message: "",
     };
   },
   methods: {
     toggleContactForm() {
-      this.contactFormVisible = !this.contactFormVisible;     
+      this.contactFormVisible = !this.contactFormVisible;
     },
   },
   computed: {
     contactFormTop() {
       return this.contactFormVisible ? "50%" : "-50em";
     },
-  }
-}
+  },
+};
 </script>
 
 
@@ -96,16 +102,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: var(--background-color);
-  height: 100vh;
+  background-color: var(--background-color);
   color: var(--primary-color);
 }
 
 .navbar {
-  padding: 1em 20.3em;
-}
-
-.container {
+  padding: 1em 15%;
   display: flex;
   place-content: space-between;
 
@@ -131,7 +133,7 @@ a {
   }
 }
 
-ul {
+.navigation {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -147,7 +149,7 @@ ul {
   }
 }
 
-.button-cta{
+.button-cta {
   color: var(--background-color);
   background: var(--accent-color);
   border-radius: 1em;
@@ -157,7 +159,7 @@ ul {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4rem;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -171,7 +173,7 @@ ul {
 }
 
 #contact-form {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -179,8 +181,8 @@ ul {
   height: 44em;
   padding: 2.5em 4.2em;
 
-  background: #2D2D2A;
-  border: 3px solid #FEA82F;
+  background: #2d2d2a;
+  border: 3px solid #fea82f;
   box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.29);
   border-radius: 1.13em;
   transition: 0.3s ease;
@@ -199,7 +201,7 @@ ul {
     right: 1em;
 
     &:hover {
-      cursor:pointer;
+      cursor: pointer;
     }
   }
 
@@ -209,7 +211,8 @@ ul {
     color: var(--accent-color);
   }
 
-  input, textarea{
+  input,
+  textarea {
     font-family: inherit;
     font-size: 1rem;
     background-color: var(--primary-color);
@@ -224,7 +227,8 @@ ul {
     transition: 0.3s;
   }
 
-  input:focus, textarea:focus {
+  input:focus,
+  textarea:focus {
     border: 2px solid var(--accent-color);
   }
 
@@ -232,7 +236,6 @@ ul {
     height: 12em;
     resize: none;
   }
-  
 
   a {
     position: absolute;
@@ -241,15 +244,14 @@ ul {
     transform: translateX(-50%);
     text-align: center;
   }
-
 }
 
 #contact-form-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 5;
   background: rgba(0, 0, 0, 0.7);
   transition: 0.3s ease;
