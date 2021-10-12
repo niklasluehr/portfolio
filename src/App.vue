@@ -30,6 +30,11 @@
     </nav>
   </div>
   <router-view />
+  <footer>
+    <a href="">Impresssum</a>
+    <a href="">GitHub</a>
+    <a href="">Instagram</a>
+  </footer>
 
   <div id="contact-form" :style="{ top: contactFormTop }">
     <h1>let's get this done!</h1>
@@ -173,6 +178,13 @@ a {
 
 .mobile-menu {
   display: none;
+}
+
+footer {
+  padding: 1em;
+  justify-content: center;
+  display: flex;
+  gap: 2em;
 }
 
 #contact-form {

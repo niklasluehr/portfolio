@@ -7,7 +7,7 @@
       </div>
       <img src="@/assets/me.jpg" alt="Me" />
     </section>
-   
+
     <section class="work">
       <section class="work-example">
         <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
@@ -35,6 +35,43 @@
         </div>
         <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
       </section>
+    </section>
+
+    <section class="testimonials">
+      <ul>
+        <li class="testimonial">
+          <blockquote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
+            adipiscing dictum rutrum lorem egestas lectus massa nibh.
+            Condimentum elementum lorem tempus ornare sit mauris. Hendrerit
+            adipiscing diam massa.
+          </blockquote>
+          <hr>
+          <h3>Ben Hughes</h3>
+          <p>dance2diz.com</p>
+        </li>
+        <li class="testimonial">
+          <blockquote>
+            Orci, nunc diam egestas sed tellus neque, malesuada mauris. Cras
+            ultrices quis tincidunt condimentum convallis arcu, ac at. Habitasse
+            sed vel enim ac sit. Orci in arcu amet imperdiet mauris eget.
+          </blockquote>
+          <hr>
+          <h3>Paul Hadi</h3>
+          <p>paulhadimusic.com</p>
+        </li>
+        <li class="testimonial">
+          <blockquote>
+            Morbi facilisis condimentum pellentesque dignissim aliquet mi amet.
+            Sit proin orci convallis nisi at ultricies nec praesent etiam.
+            Lectus duis vel maecenas tortor, leo a. Et urna et lobortis faucibus
+            elit viverra aliquam. Maecenas.
+          </blockquote>
+          <hr>
+          <h3>Andrew Ng</h3>
+          <p>deeplearning.ai</p>
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -123,7 +160,45 @@ export default {
   }
 }
 
-.right{
+.testimonials {
+  background: #21211e;
+  padding: 7em 15%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 12em;
+    justify-content: space-between;
+  }
+}
+
+.testimonial {
+  list-style-type: none;
+
+  blockquote {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.13rem;
+  }
+  h3 {
+    font-size: 1.38rem;
+    margin: 0;
+  }
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  hr {
+    margin: 1em auto;
+    width: 6.25em;
+    color:var(--accent-color);
+  }
+}
+
+.right {
   justify-content: right;
 }
 </style>
