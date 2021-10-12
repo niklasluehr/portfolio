@@ -51,7 +51,7 @@
     <textarea id="message" v-model="message" placeholder="Your Message" /><br />
     <a class="button-cta" v-on:click="toggleContactForm">send request</a>
   </div>
-  <div v-if="contactFormVisible" id="contact-form-bg"></div>
+  <div v-if="contactFormVisible" id="contact-form-bg" :style="{ height: getScrollHeight }"></div>
 </template>
 
 <script>
@@ -73,6 +73,9 @@ export default {
   computed: {
     contactFormTop() {
       return this.contactFormVisible ? "50%" : "-50em";
+    },
+    getScrollHeight(){
+      return document.body.scrollHeight + "px";
     },
   },
 };
