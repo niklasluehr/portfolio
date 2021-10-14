@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <router-link to="/" class="logo">nikolaus luehr</router-link>
+    <router-link to="/" class="logo">niklas luehr</router-link>
 
     <img
       id="mobile-cta"
