@@ -187,8 +187,8 @@ a {
 
 #message-button {
   position: fixed;
-  right: 15%;
-  bottom: 15%;
+  right: 5%;
+  bottom: 5%;
   padding: .5em;
   padding: 14px 11px 10px 12px;
   width: 53px;

@@ -4,6 +4,10 @@
       <div class="hero-text">
         <h1>I bring your business to the next level!</h1>
         <p>Web Design &amp; Development</p>
+        <div class="scroll-container" v-on:click="scrollToWork">
+          <div class="scroll-cta"></div>
+          <span>see work</span>
+        </div>
       </div>
       <img src="@/assets/me.jpg" alt="Me" />
     </section>
@@ -82,9 +86,11 @@
 
 export default {
   name: "Home",
-  // components: {
-  //   HelloWorld
-  // }
+  methods: {
+    scrollToWork() {
+      document.querySelector(".work").scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 };
 </script>
 
@@ -113,7 +119,12 @@ export default {
     max-width: 100%;
     box-shadow: inset 0px 0px 2px 2px #2d2d2a;
     border-radius: 25px;
-  }
+  }  
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
 
   h1 {
     margin: 0;
@@ -130,7 +141,69 @@ export default {
     padding-top: 0.5em;
   }
 }
+.scroll-container {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  margin-top: 3.2em;
 
+  span {
+    font-size: 1.25rem;
+    padding-left: 0.5em;
+    font-weight: bold;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.scroll-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.15em;
+  height: 3.88em;
+  width: 1.81em;
+  border: 2px solid var(--accent-color);
+  border-radius: 3em;
+
+  &:before {
+    position: relative;
+    top: 0;
+    align-self: flex-end;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    content: "";
+    border: 2px solid var(--accent-color);
+    animation: move-scroll 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes move-scroll {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    top: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    top: 2em;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    top: 2em;
+    opacity: 0;
+  }
+}
 .work {
   padding: 3.5em 15%;
 }
