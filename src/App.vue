@@ -89,6 +89,13 @@ export default {
       return document.body.scrollHeight + "px";
     },
   },
+  mounted() {
+    document.onkeydown = (event) => {
+      if (event.key === "Escape" && this.contactFormVisible) {
+        this.contactFormVisible = false;
+      }
+    }
+  }
 };
 </script>
 
@@ -187,8 +194,6 @@ a {
   width: 53px;
   height: 53px;
   border-radius: 100%;
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .mobile-menu-exit {
