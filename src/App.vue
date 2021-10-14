@@ -24,15 +24,18 @@
           <router-link to="/about">about</router-link>
         </li>
         <li>
-          <a class="button-cta" v-on:click="toggleContactForm">contact me</a>
+          <button class="button-cta" v-on:click="toggleContactForm">contact me</button>
         </li>
       </ul>
     </nav>
   </div>
   <router-view />
+  <button id="message-button" v-on:click="toggleContactForm" class="button-cta"> 
+    <img  src="@/assets/send-mail.svg" alt="Contact me">
+  </button> 
   <footer>
     <a href="">Impresssum</a>
-    <a href="">GitHub</a>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/niklasluehr">GitHub</a>
     <a href="">Instagram</a>
   </footer>
 
@@ -54,7 +57,7 @@
     /><br />
     <label for="message">message</label><br />
     <textarea id="message" v-model="message" placeholder="Your Message" /><br />
-    <a class="button-cta" v-on:click="toggleContactForm">send request</a>
+    <button class="button-cta" v-on:click="toggleContactForm">send request</button>
   </div>
   <div v-if="contactFormVisible" id="contact-form-bg" :style="{ height: getScrollHeight }"></div>
 </template>
@@ -73,6 +76,9 @@ export default {
   methods: {
     toggleContactForm() {
       this.contactFormVisible = !this.contactFormVisible;
+      if (this.contactFormVisible) {
+        document.querySelector("#name").focus();
+      }
     },
   },
   computed: {
@@ -118,6 +124,7 @@ body {
   padding: 1em 15%;
   display: flex;
   place-content: space-between;
+  align-items: center;
 
   .navigation {
     display: flex;
@@ -148,12 +155,6 @@ a {
 
   li {
     float: left;
-
-    a {
-      font-size: 1.25rem;
-      display: block;
-      text-align: center;
-    }
   }
 }
 
@@ -163,13 +164,31 @@ a {
   border-radius: 1em;
   font-weight: bold;
   font-size: 1.13rem;
-  padding: 0.44em 1.34em;
+  padding: 0.5em 1.3em;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4rem;
+  border: none;
 
   &:hover {
     cursor: pointer;
   }
+
+  &:focus {
+    outline: 2px solid var(--primary-color);
+  }
+}
+
+#message-button {
+  position: fixed;
+  right: 15%;
+  bottom: 15%;
+  padding: .5em;
+  padding: 14px 11px 10px 12px;
+  width: 53px;
+  height: 53px;
+  border-radius: 100%;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .mobile-menu-exit {
@@ -252,12 +271,11 @@ footer {
     resize: none;
   }
 
-  a {
-    position: absolute;
-    bottom: 2.5em;
+  button {
+    position: relative;
+    // bottom: 2.5em;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
   }
 }
 

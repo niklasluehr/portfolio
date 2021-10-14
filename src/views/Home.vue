@@ -102,7 +102,7 @@ export default {
 
 .hero {
   background: #21211e;
-  padding: 10.5em 15%;
+  padding: 7em 15%;
   display: flex;
   gap: 19em;
   place-content: space-between;
@@ -132,7 +132,7 @@ export default {
 }
 
 .work {
-  padding: 7em 15%;
+  padding: 3.5em 15%;
 }
 
 .work-example {
