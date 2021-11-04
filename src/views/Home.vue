@@ -41,6 +41,19 @@
       </section>
     </section>
 
+    <section class="work">
+      <section v-for="project in projects" :key="project.id" class="work-example">
+        <img :src="'http://localhost:1337' + project.preview.url" :alt="project.title + ' screenshot'" />
+        <div class="work-text">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.subtitle }}</p>
+          <ul>
+            <li v-for="line in project.description.split('\n')" :key="line">{{ line }}</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
     <section class="testimonials">
       <ul>
         <li class="testimonial">
@@ -50,7 +63,7 @@
             Condimentum elementum lorem tempus ornare sit mauris. Hendrerit
             adipiscing diam massa.
           </blockquote>
-          <hr>
+          <hr />
           <h3>Ben Hughes</h3>
           <p>dance2diz.com</p>
         </li>
@@ -60,7 +73,7 @@
             ultrices quis tincidunt condimentum convallis arcu, ac at. Habitasse
             sed vel enim ac sit. Orci in arcu amet imperdiet mauris eget.
           </blockquote>
-          <hr>
+          <hr />
           <h3>Paul Hadi</h3>
           <p>paulhadimusic.com</p>
         </li>
@@ -71,7 +84,7 @@
             Lectus duis vel maecenas tortor, leo a. Et urna et lobortis faucibus
             elit viverra aliquam. Maecenas.
           </blockquote>
-          <hr>
+          <hr />
           <h3>Andrew Ng</h3>
           <p>deeplearning.ai</p>
         </li>
@@ -81,16 +94,44 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: "Home",
+  data() {
+    return {
+      projects: [],
+      headers: { "Content-Type": "application/json" },
+    };
+  },
   methods: {
     scrollToWork() {
-      document.querySelector(".work").scrollIntoView({ behavior: 'smooth' });
+      document.querySelector(".work").scrollIntoView({ behavior: "smooth" });
+    },
+    parseJSON: function (resp) {
+      return (resp.json ? resp.json() : resp);
+    },
+    checkStatus: function (resp) {
+      if (resp.status >= 200 && resp.status < 300) {
+        return resp;
+      }
+      return this.parseJSON(resp).then((resp) => {
+        throw resp;
+      });
     }
-  }
+  },
+  async mounted() {
+    try {
+      const response = await fetch("http://localhost:1337/projects", {
+        method: "GET",
+        headers: this.headers,
+      })
+        .then(this.checkStatus)
+        .then(this.parseJSON);
+      this.projects = response
+      console.log(this.projects);
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
 };
 </script>
 
@@ -110,16 +151,19 @@ export default {
   background: #21211e;
   padding: 7em 15%;
   display: flex;
-  gap: 19em;
+  // gap: 19em;
   place-content: space-between;
+
+  .hero-text {
+    width: 28em;
+    padding-right: 2em;
+  }
 
   img {
     width: 33em;
-    max-height: 100%;
-    max-width: 100%;
     box-shadow: inset 0px 0px 2px 2px #2d2d2a;
     border-radius: 25px;
-  }  
+  }
 }
 
 .hero-text {
@@ -213,6 +257,10 @@ export default {
   gap: 3.2em;
   display: flex;
 
+  img {
+    width: 30vw;
+  }
+
   h2 {
     margin: 0;
     font-size: 2rem;
@@ -267,7 +315,7 @@ export default {
   hr {
     margin: 1em auto;
     width: 6.25em;
-    color:var(--accent-color);
+    color: var(--accent-color);
   }
 }
 
