@@ -2,7 +2,7 @@
   <div class="home">
     <section class="hero">
       <div class="hero-text">
-        <h1>I bring my business to the next level!</h1>
+        <h1>I bring your business to the next level!</h1>
         <p>Web Design &amp; Development</p>
         <div class="scroll-container" v-on:click="scrollToWork">
           <div class="scroll-cta"></div>
