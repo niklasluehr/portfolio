@@ -41,19 +41,6 @@
       </section>
     </section>
 
-    <section class="work">
-      <section v-for="project in projects" :key="project.id" class="work-example">
-        <img :src="'http://localhost:1337' + project.preview.url" :alt="project.title + ' screenshot'" />
-        <div class="work-text">
-          <h2>{{ project.title }}</h2>
-          <p>{{ project.subtitle }}</p>
-          <ul>
-            <li v-for="line in project.description.split('\n')" :key="line">{{ line }}</li>
-          </ul>
-        </div>
-      </section>
-    </section>
-
     <section class="testimonials">
       <ul>
         <li class="testimonial">
@@ -98,53 +85,21 @@ export default {
   name: "Home",
   data() {
     return {
-      projects: [],
-      headers: { "Content-Type": "application/json" },
     };
   },
   methods: {
     scrollToWork() {
       document.querySelector(".work").scrollIntoView({ behavior: "smooth" });
     },
-    parseJSON: function (resp) {
-      return (resp.json ? resp.json() : resp);
-    },
-    checkStatus: function (resp) {
-      if (resp.status >= 200 && resp.status < 300) {
-        return resp;
-      }
-      return this.parseJSON(resp).then((resp) => {
-        throw resp;
-      });
-    }
-  },
-  async mounted() {
-    try {
-      const response = await fetch("http://localhost:1337/projects", {
-        method: "GET",
-        headers: this.headers,
-      })
-        .then(this.checkStatus)
-        .then(this.parseJSON);
-      this.projects = response
-      console.log(this.projects);
-    } catch (error) {
-      console.log(error.message);
-    }
   },
 };
 </script>
 
 <style lang="scss">
-:root {
-  --primary-color: #f7f7f7;
-  --accent-color: #fea82f;
-  --background-color: #2d2d2a;
-}
 
 .home {
   text-align: left;
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .hero {
@@ -173,7 +128,7 @@ export default {
   h1 {
     margin: 0;
     font-size: 3.3rem;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent);
     padding-bottom: 0.15em;
   }
 
@@ -208,7 +163,7 @@ export default {
   padding: 0.15em;
   height: 3.88em;
   width: 1.81em;
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--accent);
   border-radius: 3em;
 
   &:before {
@@ -219,7 +174,7 @@ export default {
     height: 1em;
     border-radius: 50%;
     content: "";
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--accent);
     animation: move-scroll 1.2s ease-in-out infinite;
   }
 }
@@ -264,14 +219,14 @@ export default {
   h2 {
     margin: 0;
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--accent);
     font-weight: bold;
   }
 
   p {
     margin: 0;
     letter-spacing: 0.185em;
-    color: var(--accent-color);
+    color: var(--accent);
     text-transform: uppercase;
     // padding-top: 0.5em;
   }
@@ -315,7 +270,7 @@ export default {
   hr {
     margin: 1em auto;
     width: 6.25em;
-    color: var(--accent-color);
+    color: var(--accent);
   }
 }
 

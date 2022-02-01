@@ -15,11 +15,6 @@
 </template>
 
 <style lang="scss">
-:root {
-  --primary-color: #f7f7f7;
-  --accent-color: #fea82f;
-  --background-color: #2d2d2a;
-}
 
 h1 {
   margin: 0;
@@ -48,12 +43,12 @@ h1 {
     margin: 0;
     font-style: italic;
     font-size: 1.25rem;
-    color: var(--primary-color);
+    color: var(--primary);
 
     span {
       position: absolute;
       font-size: 3.13rem;
-      color: var(--accent-color);
+      color: var(--accent);
       
       &.left-quote {
         transform: translate(-0.4em, -0.3em);
