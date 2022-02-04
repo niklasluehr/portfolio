@@ -27,10 +27,10 @@
   <nav class="mobile-menu" :style="{ left: mobileMenuLeft }">
     <ul>
       <li>
-        <router-link to="/">work</router-link>
+        <router-link @click="toggleMobileMenu" to="/">work</router-link>
       </li>
       <li>
-        <router-link to="/about">about</router-link>
+        <router-link @click="toggleMobileMenu" to="/about">about</router-link>
       </li>
     </ul>
     <Icon

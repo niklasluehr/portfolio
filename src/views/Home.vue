@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <section class="hero">
+      <img src="@/assets/me.jpg" alt="Me" />
       <div class="hero-text">
         <h1>I bring your business to the next level!</h1>
+        <hr />
         <p>Web Design &amp; Development</p>
         <div class="scroll-container" v-on:click="scrollToWork">
           <div class="scroll-cta"></div>
           <span>see work</span>
         </div>
       </div>
-      <img src="@/assets/me.jpg" alt="Me" />
     </section>
 
     <section class="work">
@@ -84,8 +85,7 @@
 export default {
   name: "Home",
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     scrollToWork() {
@@ -96,86 +96,89 @@ export default {
 </script>
 
 <style lang="scss">
-
-.home {
-  text-align: left;
-  color: var(--primary);
-}
-
 .hero {
-  background: #21211e;
-  padding: 7em 15%;
   display: flex;
-  // gap: 19em;
+  flex-direction: column;
+  gap: 1em;
+  background: #21211e;
+  padding: var(--margin-mobile);
+  display: flex;
   place-content: space-between;
-
-  .hero-text {
-    width: 28em;
-    padding-right: 2em;
-  }
+  color: var(--primary);
 
   img {
-    width: 33em;
+    width: 100%;
+    /* height: 60vh; */
+    object-fit: cover;
     box-shadow: inset 0px 0px 2px 2px #2d2d2a;
     border-radius: 25px;
   }
-}
 
-.hero-text {
-  display: flex;
-  flex-direction: column;
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
 
-  h1 {
-    margin: 0;
-    font-size: 3.3rem;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.15em;
-  }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
 
-  p {
-    margin: 0;
-    font-size: 1.38rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding-top: 0.5em;
-  }
-}
-.scroll-container {
-  align-self: center;
-  display: flex;
-  align-items: center;
-  margin-top: 3.2em;
+    hr {
+      margin: 1em auto;
+      width: 70%;
+      color: var(--accent);
+      border: none;
+      height: 2px;
+      background-color: var(--accent);
+    }
 
-  span {
-    font-size: 1.25rem;
-    padding-left: 0.5em;
-    font-weight: bold;
-  }
+    p {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-  &:hover {
-    cursor: pointer;
-  }
-}
-.scroll-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.15em;
-  height: 3.88em;
-  width: 1.81em;
-  border: 2px solid var(--accent);
-  border-radius: 3em;
+    .scroll-container {
+      align-self: center;
+      display: flex;
+      align-items: center;
+      margin-top: 2em;
 
-  &:before {
-    position: relative;
-    top: 0;
-    align-self: flex-end;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    content: "";
-    border: 2px solid var(--accent);
-    animation: move-scroll 1.2s ease-in-out infinite;
+      span {
+        font-size: 1.2rem;
+        padding-left: 0.5em;
+        font-weight: bold;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .scroll-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.15em;
+        height: 3.88em;
+        width: 1.81em;
+        border: 2px solid var(--accent);
+        border-radius: 3em;
+
+        &:before {
+          position: relative;
+          top: 0;
+          align-self: flex-end;
+          width: 1em;
+          height: 1em;
+          border-radius: 50%;
+          content: "";
+          border: 2px solid var(--accent);
+          animation: move-scroll 1.2s ease-in-out infinite;
+        }
+      }
+    }
   }
 }
 
@@ -203,6 +206,7 @@ export default {
     opacity: 0;
   }
 }
+
 .work {
   padding: 3.5em 15%;
 }
@@ -276,5 +280,57 @@ export default {
 
 .right {
   justify-content: right;
+}
+
+/* SMALLER IMAGE */
+@media only screen and (min-width: 600px) {
+  .hero {
+    img {
+      height: 50vh;
+    }
+  }
+}
+
+
+/* DESKTOP */
+@media only screen and (min-width: 1440px) {
+  hero {
+  background: #21211e;
+  padding: 7em 15%;
+  display: flex;
+  // gap: 19em;
+  place-content: space-between;
+
+  .hero-text {
+    width: 28em;
+    padding-right: 2em;
+  }
+
+  img {
+    width: 33em;
+    box-shadow: inset 0px 0px 2px 2px #2d2d2a;
+    border-radius: 25px;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+    font-size: 3.3rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.15em;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.38rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-top: 0.5em;
+  }
+}
 }
 </style>
