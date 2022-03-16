@@ -11,11 +11,9 @@
 
   <router-view />
 
-  <ActionButton
-    id="message-button"
-    iconName="bx:bx-mail-send"
-    v-on:click="toggleContactForm"
-  />
+  <div id="message-button" class="clickable" @click="toggleContactForm">
+    <Icon icon="bx:bx-mail-send"/>
+  </div>
 
   <footer>
     <a href="">Impresssum</a>
@@ -49,15 +47,14 @@
 
 <script>
 import TheNavBar from "@/components/TheNavBar.vue";
-import ActionButton from "@/components/ActionButton.vue";
-// import TheFooter from "@/components/TheFooter.vue"
+import { Icon } from "@iconify/vue";
 import TheContactForm from "@/components/TheContactForm.vue";
 
 export default {
   components: {
     TheNavBar,
     TheContactForm,
-    ActionButton,
+    Icon,
   },
   data() {
     return {
@@ -124,12 +121,26 @@ body {
   right: 5%;
   bottom: 5%;
   padding: 0.5em;
-  padding: 14px 11px 10px 12px;
-  width: 53px;
-  height: 53px;
+  padding-right: 0.68em;
+  padding-top: 0.6em;
+  // width: 53px;
+  // height: 53px;
   border-radius: 100%;
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:focus {
+    outline: 2px solid var(--primary);
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
   svg {
-    font-size: 4rem;
+    font-size: 1.5rem;
+    color: var(--background);
   }
 }
 

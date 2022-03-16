@@ -1,5 +1,9 @@
 <template>
-  <div id="contact-form" :class="{ visible: isVisible }">
+  <form
+    id="contact-form"
+    @submit.prevent="handleSubmit"
+    :class="{ visible: isVisible }"
+  >
     <h1>let's get this done!</h1>
     <Icon
       class="clickable closeIcon"
@@ -8,22 +12,33 @@
       style="color: var(--accent)"
     />
     <label for="name">Name</label><br />
-    <input type="text" id="name" v-model="name" placeholder="Ihr Name" /><br />
+    <input
+      type="text"
+      required
+      id="name"
+      name="name"
+      v-model="name"
+      placeholder="Ihr Name"
+    /><br />
     <label for="email">E-Mail</label><br />
     <input
       type="email"
+      required
       id="email"
+      name="email"
       v-model="email"
       placeholder="Ihre E-Mail"
     /><br />
     <label for="message">Nachricht</label><br />
     <textarea
       id="message"
+      required
+      name="message"
       v-model="message"
       placeholder="Ihre Nachricht"
     /><br />
-    <ActionButton label="senden" @click="toggleContactForm"></ActionButton>
-  </div>
+    <ActionButton label="senden"></ActionButton>
+  </form>
 </template>
 
 <script>
@@ -45,6 +60,10 @@ export default {
     };
   },
   methods: {
+    handleSubmit() {
+      //TODO
+      this.toggleContactForm();
+    },
     toggleContactForm() {
       this.isVisible = !this.isVisible;
       this.$emit("contactFormToggled");
@@ -72,7 +91,7 @@ export default {
 
   h1 {
     margin: 0;
-    margin-bottom: .66em;
+    margin-bottom: 0.66em;
     font-size: 1.25rem;
   }
 
