@@ -11,7 +11,7 @@
       icon="bx:bx-x"
       style="color: var(--accent)"
     />
-    <label for="name">Name</label><br />
+    <label for="name">name</label><br />
     <input
       type="text"
       required
@@ -20,7 +20,7 @@
       v-model="name"
       placeholder="Ihr Name"
     /><br />
-    <label for="email">E-Mail</label><br />
+    <label for="email">e-mail</label><br />
     <input
       type="email"
       required
@@ -29,7 +29,7 @@
       v-model="email"
       placeholder="Ihre E-Mail"
     /><br />
-    <label for="message">Nachricht</label><br />
+    <label for="message">nachricht</label><br />
     <textarea
       id="message"
       required
@@ -92,7 +92,7 @@ export default {
   h1 {
     margin: 0;
     margin-bottom: 0.66em;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   label {

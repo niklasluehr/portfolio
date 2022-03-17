@@ -73,7 +73,7 @@ export default {
 
 <style scoped lang="scss">
 .navbar {
-  padding: 1em var(--margin-mobile);
+  padding: 0.5em var(--margin-mobile);
   display: flex;
   place-content: space-between;
   align-items: center;
