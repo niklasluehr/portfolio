@@ -55,7 +55,7 @@
           <h3>Ben Hughes</h3>
           <p>dance2diz.com</p>
         </li>
-        <li class="testimonial">
+        <!-- <li class="testimonial">
           <blockquote>
             Orci, nunc diam egestas sed tellus neque, malesuada mauris. Cras
             ultrices quis tincidunt condimentum convallis arcu, ac at. Habitasse
@@ -75,7 +75,7 @@
           <hr />
           <h3>Andrew Ng</h3>
           <p>deeplearning.ai</p>
-        </li>
+        </li> -->
       </ul>
     </section>
   </div>
@@ -249,59 +249,66 @@ export default {
 }
 
 .testimonials {
-  background: #21211e;
-  padding: 7em 15%;
+  background: var(--background2);
+  padding: 2em;
 
   ul {
     margin: 0;
     padding: 0;
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    gap: 12em;
-    justify-content: space-between;
-  }
-}
 
-.testimonial {
-  list-style-type: none;
+    .testimonial {
+      list-style-type: none;
 
-  blockquote {
-    margin: 0;
-    font-style: italic;
-    font-size: 1.13rem;
-  }
-  h3 {
-    font-size: 1.38rem;
-    margin: 0;
-  }
-  p {
-    font-size: 1rem;
-    margin: 0;
-  }
-  hr {
-    margin: 1em auto;
-    width: 6.25em;
-    color: var(--accent);
-  }
-}
+      blockquote {
+        margin: 0;
+        font-style: italic;
+        font-size: 1rem;
+      }
 
-/* SMALLER IMAGE */
-@media only screen and (min-width: 600px) {
-  .hero {
-    img {
-      height: 50vh;
+      h3 {
+        font-size: 1.1rem;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      hr {
+        margin: 0.8em auto;
+        width: 8em;
+        border: none;
+        height: 1px;
+        color: var(--accent);
+        background-color: var(--accent);
+      }
     }
+  }
+}
+
+/* TABLET */
+@media only screen and (min-width: 768px) {
+  .hero {
+    padding: var(--margin-tablet);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1em;
+
+    img {
+      width : 50%;
+      min-width: 50%;
+    }
+
   }
 }
 
 /* DESKTOP */
 @media only screen and (min-width: 1440px) {
-  hero {
-    background: #21211e;
-    padding: 7em 15%;
+  .hero {
     display: flex;
-    // gap: 19em;
+    flex-direction: row-reverse;
     place-content: space-between;
 
     .hero-text {
