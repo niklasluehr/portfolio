@@ -17,8 +17,8 @@
       <section class="work-example">
         <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
         <div class="work-text">
-          <h2>codefast.app</h2>
-          <p>touch typing trainer for coders</p>
+          <h2>dance2diz</h2>
+          <p>Landing Page for Breakdance School</p>
           <ul>
             <li>train special keys used in programming</li>
             <li>track time and words per minute</li>
@@ -27,8 +27,9 @@
           </ul>
         </div>
       </section>
-      <section class="work-example right">
+      <section class="work-example">
         <div class="work-text">
+          <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
           <h2>codefast.app</h2>
           <p>touch typing trainer for coders</p>
           <ul>
@@ -38,7 +39,6 @@
             <li>global leaderboards</li>
           </ul>
         </div>
-        <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
       </section>
     </section>
 
@@ -100,7 +100,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  background: #21211e;
+  background: var(--background2);
   padding: var(--margin-mobile);
   display: flex;
   place-content: space-between;
@@ -208,35 +208,43 @@ export default {
 }
 
 .work {
-  padding: 3.5em 15%;
-}
+  padding: var(--margin-mobile);
 
-.work-example {
-  padding: 3.5em 0;
-  gap: 3.2em;
-  display: flex;
-
-  img {
-    width: 30vw;
+  &:nth-child(odd) {
+    background-color: var(--background2);
   }
 
-  h2 {
-    margin: 0;
-    font-size: 2rem;
-    color: var(--accent);
-    font-weight: bold;
-  }
+  .work-example {
+    margin-bottom: 4em;
 
-  p {
-    margin: 0;
-    letter-spacing: 0.185em;
-    color: var(--accent);
-    text-transform: uppercase;
-    // padding-top: 0.5em;
-  }
+    img {
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
 
-  ul {
-    font-size: 1.25rem;
+    .work-text {
+      h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      p {
+        margin: 0;
+        letter-spacing: 0.15em;
+        font-size: 0.9rem;
+        color: var(--accent);
+        text-transform: uppercase;
+        // padding-top: 0.5em;
+      }
+
+      ul {
+        text-align: left;
+        margin-top: 0.5em;
+        padding-left: 2em;
+      }
+    }
   }
 }
 
@@ -278,10 +286,6 @@ export default {
   }
 }
 
-.right {
-  justify-content: right;
-}
-
 /* SMALLER IMAGE */
 @media only screen and (min-width: 600px) {
   .hero {
@@ -291,46 +295,45 @@ export default {
   }
 }
 
-
 /* DESKTOP */
 @media only screen and (min-width: 1440px) {
   hero {
-  background: #21211e;
-  padding: 7em 15%;
-  display: flex;
-  // gap: 19em;
-  place-content: space-between;
+    background: #21211e;
+    padding: 7em 15%;
+    display: flex;
+    // gap: 19em;
+    place-content: space-between;
+
+    .hero-text {
+      width: 28em;
+      padding-right: 2em;
+    }
+
+    img {
+      width: 33em;
+      box-shadow: inset 0px 0px 2px 2px #2d2d2a;
+      border-radius: 25px;
+    }
+  }
 
   .hero-text {
-    width: 28em;
-    padding-right: 2em;
-  }
+    display: flex;
+    flex-direction: column;
 
-  img {
-    width: 33em;
-    box-shadow: inset 0px 0px 2px 2px #2d2d2a;
-    border-radius: 25px;
-  }
-}
+    h1 {
+      margin: 0;
+      font-size: 3.3rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.15em;
+    }
 
-.hero-text {
-  display: flex;
-  flex-direction: column;
-
-  h1 {
-    margin: 0;
-    font-size: 3.3rem;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.15em;
+    p {
+      margin: 0;
+      font-size: 1.38rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding-top: 0.5em;
+    }
   }
-
-  p {
-    margin: 0;
-    font-size: 1.38rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding-top: 0.5em;
-  }
-}
 }
 </style>
