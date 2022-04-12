@@ -55,7 +55,7 @@
           <h3>Ben Hughes</h3>
           <p>dance2diz.com</p>
         </li>
-        <!-- <li class="testimonial">
+        <li class="testimonial">
           <blockquote>
             Orci, nunc diam egestas sed tellus neque, malesuada mauris. Cras
             ultrices quis tincidunt condimentum convallis arcu, ac at. Habitasse
@@ -75,7 +75,7 @@
           <hr />
           <h3>Andrew Ng</h3>
           <p>deeplearning.ai</p>
-        </li> -->
+        </li>
       </ul>
     </section>
   </div>
