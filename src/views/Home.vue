@@ -43,8 +43,14 @@
     </section>
 
     <section class="testimonials">
-      <ul>
-        <li class="testimonial">
+      <Swiper
+        class="testimonial-swiper"
+        :modules="modules"
+        :slides-per-view="1"
+        :space-between="50"
+        :pagination="{ clickable: true, dynamicBullets: true }"
+      >
+        <SwiperSlide class="testimonial">
           <blockquote>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
             adipiscing dictum rutrum lorem egestas lectus massa nibh.
@@ -54,8 +60,8 @@
           <hr />
           <h3>Ben Hughes</h3>
           <p>dance2diz.com</p>
-        </li>
-        <li class="testimonial">
+        </SwiperSlide>
+        <SwiperSlide class="testimonial">
           <blockquote>
             Orci, nunc diam egestas sed tellus neque, malesuada mauris. Cras
             ultrices quis tincidunt condimentum convallis arcu, ac at. Habitasse
@@ -64,8 +70,8 @@
           <hr />
           <h3>Paul Hadi</h3>
           <p>paulhadimusic.com</p>
-        </li>
-        <li class="testimonial">
+        </SwiperSlide>
+        <SwiperSlide class="testimonial">
           <blockquote>
             Morbi facilisis condimentum pellentesque dignissim aliquet mi amet.
             Sit proin orci convallis nisi at ultricies nec praesent etiam.
@@ -75,17 +81,27 @@
           <hr />
           <h3>Andrew Ng</h3>
           <p>deeplearning.ai</p>
-        </li>
-      </ul>
+        </SwiperSlide>
+      </Swiper>
     </section>
   </div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, A11y } from "swiper";
+import "swiper/css/bundle";
+
 export default {
   name: "Home",
+  components: { Swiper, SwiperSlide },
   data() {
     return {};
+  },
+  setup() {
+    return {
+      modules: [Pagination, A11y],
+    };
   },
   methods: {
     scrollToWork() {
@@ -95,7 +111,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .hero {
   display: flex;
   flex-direction: column;
@@ -252,10 +268,8 @@ export default {
   background: var(--background2);
   padding: 2em;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  .testimonial-swiper {
+    padding-bottom: 2em;
 
     .testimonial {
       list-style-type: none;
@@ -287,6 +301,15 @@ export default {
   }
 }
 
+:global(.swiper-pagination-bullet) {
+  background-color: var(--primary);
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background-color: var(--accent);
+}
+
+
 /* TABLET */
 @media only screen and (min-width: 768px) {
   .hero {
@@ -297,10 +320,9 @@ export default {
     gap: 1em;
 
     img {
-      width : 50%;
+      width: 50%;
       min-width: 50%;
     }
-
   }
 }
 
