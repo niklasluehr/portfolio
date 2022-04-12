@@ -15,7 +15,7 @@
 
     <section class="work">
       <section class="work-example">
-        <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
+        <img src="@/assets/dance.png" alt="dance2diz screenshot" />
         <div class="work-text">
           <h2>dance2diz</h2>
           <p>Landing Page for Breakdance School</p>
@@ -226,17 +226,22 @@ export default {
 .work {
   padding: var(--margin-mobile);
 
-  &:nth-child(odd) {
-    background-color: var(--background2);
-  }
-
   .work-example {
-    margin-bottom: 4em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // &:nth-child(odd) {
+    //   background-color: var(--background2);
+    // }
 
     img {
       width: 100%;
-      margin-bottom: 0.5em;
+      margin-bottom: 2em;
     }
+
+    //Todo: from here
 
     .work-text {
       h2 {
@@ -259,6 +264,10 @@ export default {
         text-align: left;
         margin-top: 0.5em;
         padding-left: 2em;
+
+        li {
+          padding-bottom: 0.3em;
+        }
       }
     }
   }
@@ -266,7 +275,7 @@ export default {
 
 .testimonials {
   background: var(--background2);
-  padding: 2em;
+  padding: var(--margin-mobile);
 
   .testimonial-swiper {
     padding-bottom: 2em;
@@ -309,7 +318,6 @@ export default {
   background-color: var(--accent);
 }
 
-
 /* TABLET */
 @media only screen and (min-width: 768px) {
   .hero {
@@ -322,6 +330,45 @@ export default {
     img {
       width: 50%;
       min-width: 50%;
+    }
+  }
+
+  .work {
+    padding: var(--margin-tablet);
+
+    .work-example {
+      display: flex;
+      gap: 2em;
+      text-align: left;
+
+      img {
+        width: 60%;
+        margin-bottom: 0;
+      }
+
+      .work-text {
+        h2 {
+          margin: 0;
+          font-size: 1.5rem;
+          color: var(--accent);
+          font-weight: bold;
+        }
+
+        p {
+          margin: 0;
+          letter-spacing: 0.15em;
+          font-size: 0.9rem;
+          color: var(--accent);
+          text-transform: uppercase;
+          // padding-top: 0.5em;
+        }
+
+        ul {
+          text-align: left;
+          margin-top: 0.5em;
+          padding-left: 2em;
+        }
+      }
     }
   }
 }
