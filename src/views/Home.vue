@@ -28,8 +28,8 @@
         </div>
       </section>
       <section class="work-example">
+        <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
         <div class="work-text">
-          <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
           <h2>codefast.app</h2>
           <p>touch typing trainer for coders</p>
           <ul>
@@ -46,7 +46,7 @@
       <Swiper
         class="testimonial-swiper"
         :modules="modules"
-        :slides-per-view="1"
+        :slides-per-view="testimonialSlidesPerView"
         :space-between="50"
         :pagination="{ clickable: true, dynamicBullets: true }"
       >
@@ -91,10 +91,12 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, A11y } from "swiper";
 import "swiper/css/bundle";
+import { VueScreenSizeMixin } from "vue-screen-size";
 
 export default {
   name: "Home",
   components: { Swiper, SwiperSlide },
+  mixins: [VueScreenSizeMixin],
   data() {
     return {};
   },
@@ -106,6 +108,17 @@ export default {
   methods: {
     scrollToWork() {
       document.querySelector(".work").scrollIntoView({ behavior: "smooth" });
+    },
+  },
+  computed: {
+    testimonialSlidesPerView() {
+      if (this.$vssWidth < 768) {
+        return 1;
+      } else if (this.$vssWidth < 1440) {
+        return 2;
+      } else {
+        return 3;
+      }
     },
   },
 };
@@ -238,7 +251,7 @@ export default {
 
     img {
       width: 100%;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
     }
 
     //Todo: from here
@@ -275,7 +288,7 @@ export default {
 
 .testimonials {
   background: var(--background2);
-  padding: var(--margin-mobile);
+  padding: 2em var(--margin-mobile);
 
   .testimonial-swiper {
     padding-bottom: 2em;
@@ -321,7 +334,7 @@ export default {
 /* TABLET */
 @media only screen and (min-width: 768px) {
   .hero {
-    padding: var(--margin-tablet);
+    padding: 3em var(--margin-tablet);
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -337,37 +350,33 @@ export default {
     padding: var(--margin-tablet);
 
     .work-example {
-      display: flex;
+      height: unset;
+      padding: 2em 0;
+      flex-direction: row;
       gap: 2em;
       text-align: left;
 
-      img {
-        width: 60%;
-        margin-bottom: 0;
+      &:nth-child(even) {
+        flex-direction: row-reverse;
       }
 
-      .work-text {
-        h2 {
-          margin: 0;
-          font-size: 1.5rem;
-          color: var(--accent);
-          font-weight: bold;
-        }
+      img {
+        width: 50%;
+        margin-bottom: 0;
+        object-fit: cover;
+      }
+    }
+  }
 
-        p {
-          margin: 0;
-          letter-spacing: 0.15em;
-          font-size: 0.9rem;
-          color: var(--accent);
-          text-transform: uppercase;
-          // padding-top: 0.5em;
-        }
+  .testimonials {
+    background: var(--background2);
+    padding: 3em var(--margin-tablet);
 
-        ul {
-          text-align: left;
-          margin-top: 0.5em;
-          padding-left: 2em;
-        }
+    .testimonial-swiper {
+      padding-bottom: 2em;
+
+      .testimonial {
+        padding: 0 1em;
       }
     }
   }
