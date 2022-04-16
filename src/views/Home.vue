@@ -338,7 +338,30 @@ export default {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 1em;
+    gap: 3.5em;
+
+    .hero-text {
+      text-align: left;
+
+      h1 {
+        margin: 0;
+        font-size: 1.7rem;
+        padding-bottom: 0.3em;
+      }
+      hr {
+       display: none; 
+      }
+
+      p {
+        align-self: flex-start;
+        margin: 0;
+        padding-top: 0.7em;
+        border-top: 2px solid var(--accent);
+      }
+      hr {
+        display: none;
+      }
+    }
 
     img {
       width: 50%;
@@ -347,7 +370,7 @@ export default {
   }
 
   .work {
-    padding: var(--margin-tablet);
+    padding: 3em var(--margin-tablet);
 
     .work-example {
       height: unset;
@@ -385,13 +408,29 @@ export default {
 /* DESKTOP */
 @media only screen and (min-width: 1440px) {
   .hero {
-    display: flex;
-    flex-direction: row-reverse;
-    place-content: space-between;
+    padding: 4em calc((100% - var(--desktop-max-width)) / 2);
 
     .hero-text {
       width: 28em;
       padding-right: 2em;
+
+      h1 {
+        margin: 0;
+        font-size: 3.3rem;
+        padding-bottom: 0.15em;
+        border-bottom: 2px solid var(--accent);
+      }
+      hr {
+       display: none; 
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.38rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding-top: 0.5em;
+      }
     }
 
     img {
@@ -404,21 +443,14 @@ export default {
   .hero-text {
     display: flex;
     flex-direction: column;
-
-    h1 {
-      margin: 0;
-      font-size: 3.3rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.15em;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1.38rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding-top: 0.5em;
-    }
   }
+}
+
+.work {
+  padding: 1em calc((100% - var(--desktop-max-width)) / 2);
+}
+
+.testimonials {
+  padding: 1em calc((100% - var(--desktop-max-width)) / 2);
 }
 </style>
