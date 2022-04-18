@@ -78,8 +78,8 @@ export default {
   },
   computed: {
     getScrollHeight() {
-      return document.body.scrollHeight + "px";
-      // return "100%";
+      return document.documentElement.scrollHeight + "px";
+      // return "100vh";
     },
   },
   mounted() {
@@ -105,6 +105,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 #app {
@@ -114,6 +115,7 @@ body {
   text-align: center;
   background-color: var(--background);
   color: var(--primary);
+  height: 100%;
 }
 
 #message-button {

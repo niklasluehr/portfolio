@@ -114,7 +114,7 @@ export default {
     testimonialSlidesPerView() {
       if (this.$vssWidth < 768) {
         return 1;
-      } else if (this.$vssWidth < 1440) {
+      } else if (this.$vssWidth < 1264) {
         return 2;
       } else {
         return 3;
@@ -131,13 +131,9 @@ export default {
   gap: 1em;
   background: var(--background2);
   padding: var(--margin-mobile);
-  display: flex;
-  place-content: space-between;
-  color: var(--primary);
 
   img {
     width: 100%;
-    /* height: 60vh; */
     object-fit: cover;
     box-shadow: inset 0px 0px 2px 2px #2d2d2a;
     border-radius: 25px;
@@ -164,7 +160,6 @@ export default {
 
     p {
       margin: 0;
-      font-size: 1rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
@@ -240,21 +235,15 @@ export default {
   padding: var(--margin-mobile);
 
   .work-example {
-    height: 100vh;
+    height: max(100vh, 100vw);
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    // &:nth-child(odd) {
-    //   background-color: var(--background2);
-    // }
 
     img {
       width: 100%;
       margin-bottom: 1em;
     }
-
-    //Todo: from here
 
     .work-text {
       h2 {
@@ -270,12 +259,12 @@ export default {
         font-size: 0.9rem;
         color: var(--accent);
         text-transform: uppercase;
-        // padding-top: 0.5em;
       }
 
       ul {
         text-align: left;
         margin-top: 0.5em;
+        margin-bottom: 0;
         padding-left: 2em;
 
         li {
@@ -335,13 +324,14 @@ export default {
 @media only screen and (min-width: 768px) {
   .hero {
     padding: 3em var(--margin-tablet);
-    display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 3.5em;
+    justify-content: space-between;
+    // gap: 3.5em;
 
     .hero-text {
       text-align: left;
+      width: 35ch;
 
       h1 {
         margin: 0;
@@ -349,7 +339,7 @@ export default {
         padding-bottom: 0.3em;
       }
       hr {
-       display: none; 
+        display: none;
       }
 
       p {
@@ -358,33 +348,38 @@ export default {
         padding-top: 0.7em;
         border-top: 2px solid var(--accent);
       }
-      hr {
-        display: none;
-      }
     }
 
     img {
       width: 50%;
-      min-width: 50%;
+      // min-width: 50%;
+      max-width: 500px;
     }
   }
 
   .work {
     padding: 3em var(--margin-tablet);
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
 
     .work-example {
       height: unset;
       padding: 2em 0;
       flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
       gap: 2em;
       text-align: left;
 
       &:nth-child(even) {
         flex-direction: row-reverse;
+        gap: 3em;
       }
 
       img {
-        width: 50%;
+        width: 60%;
+        min-width: 60%;
         margin-bottom: 0;
         object-fit: cover;
       }
@@ -404,24 +399,37 @@ export default {
     }
   }
 }
+/* hero bigger text */
+@media only screen and (min-width: 950px) {
+  .hero {
+    .hero-text {
+
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
 
 /* DESKTOP */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1264px) {
   .hero {
     padding: 4em calc((100% - var(--desktop-max-width)) / 2);
 
     .hero-text {
-      width: 28em;
       padding-right: 2em;
+      width: 50ch;
 
       h1 {
         margin: 0;
         font-size: 3.3rem;
         padding-bottom: 0.15em;
-        border-bottom: 2px solid var(--accent);
       }
       hr {
-       display: none; 
+        display: none;
       }
 
       p {
@@ -430,27 +438,32 @@ export default {
         letter-spacing: 0.2em;
         text-transform: uppercase;
         padding-top: 0.5em;
+        border-width: 3px;
       }
     }
 
     img {
-      width: 33em;
+      width: 550px;
+      max-width: 550px;
       box-shadow: inset 0px 0px 2px 2px #2d2d2a;
       border-radius: 25px;
     }
   }
 
-  .hero-text {
-    display: flex;
-    flex-direction: column;
+  .work {
+    padding: 4em calc((100% - var(--desktop-max-width)) / 2);
+
+    .work-example {
+      gap: 3.5em;
+
+      &:nth-child(even) {
+        gap: 5em;
+      }
+    }
   }
-}
 
-.work {
-  padding: 1em calc((100% - var(--desktop-max-width)) / 2);
-}
-
-.testimonials {
-  padding: 1em calc((100% - var(--desktop-max-width)) / 2);
+  .testimonials {
+    padding: 4em calc((100% - var(--desktop-max-width)) / 2);
+  }
 }
 </style>

@@ -168,7 +168,7 @@ export default {
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1264px) {
   .navbar {
     padding: 1em calc((100% - var(--desktop-max-width)) / 2);
 
