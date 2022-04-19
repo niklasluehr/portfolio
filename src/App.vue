@@ -15,7 +15,7 @@
     <Icon icon="bx:bx-mail-send"/>
   </div>
 
-  <footer>
+  <footer :style="{ background: footerBackground}">
     <a href="">Impresssum</a>
     <a
       target="_blank"
@@ -81,6 +81,9 @@ export default {
       return document.documentElement.scrollHeight + "px";
       // return "100vh";
     },
+    footerBackground() {
+      return this.$route.name == "About" ? "var(--background2)" : "unset";
+    }
   },
   mounted() {
     document.onkeydown = (event) => {
