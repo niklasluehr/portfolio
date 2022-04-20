@@ -420,6 +420,7 @@
 
 <style lang="scss" scoped>
 .datenschutz {
+  font-family: "Helvetica";
   background: var(--background2);
   text-align: left;
   padding: var(--margin-mobile);

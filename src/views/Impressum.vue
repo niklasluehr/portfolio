@@ -42,6 +42,7 @@
 
 <style lang="scss" scoped>
 .impressum {
+  font-family: "Helvetica";
   min-height: 100vh;
   background: var(--background2);
   text-align: left;
