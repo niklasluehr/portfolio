@@ -7,7 +7,7 @@
         <span class="left-quote">"</span>
         I’m a computer science student from Munich, currently doing my Masters
         degree at LMU. I’ve been passionate about computers and programming ever
-        since my grandpa told my how to write simple programs in BASIC.
+        since my grandpa taught my how to write simple programs in BASIC.
         <span class="right-quote">"</span>
       </blockquote>
     </section>
@@ -15,13 +15,13 @@
       <div class="block">
         <h2>education</h2>
         <ul>
-          <li>2021 B.Sc. Computer Science (1.34)</li>
+          <li><b>2021</b> B.Sc. Computer Science (1.34)</li>
           <li>
-            2021 Bachelor Thesis “Action Quality Assessment of Trampline
+            <b>2021</b> Bachelor Thesis “Action Quality Assessment of Trampline
             Routines”: Automatically judging the Olympic Trampoline event from
             videos with Deep Learning
           </li>
-          <li>2016 Abitur (1.5)</li>
+          <li><b>2016</b> Abitur (1.5)</li>
         </ul>
       </div>
       <div class="block">
@@ -35,8 +35,8 @@
       <div class="block">
         <h2>interests</h2>
         <ul>
-          <li>Deep Learning</li>
-          <li>Sports: Gymnasctics, Breakdance</li>
+          <li>Deep Learning, AI</li>
+          <li>Sports: Gymnasctics, Breakdance, Fitness</li>
           <li>Personal Development</li>
         </ul>
       </div>
@@ -106,8 +106,8 @@
       color: var(--accent); /* Change the color */
       font-weight: bold; /* If you want it to be bold */
       display: inline-block; /* Needed to add space between the bullet and the text */
-      width: 1.4em; /* Also needed for space (tweak if needed) */
-      margin-left: -1.4em; /* Also needed for space (tweak if needed) */
+      width: 1.6em; /* Also needed for space (tweak if needed) */
+      margin-left: -1.6em; /* Also needed for space (tweak if needed) */
     }
   }
 }

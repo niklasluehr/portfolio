@@ -16,14 +16,14 @@
   </div>
 
   <footer :style="{ background: footerBackground}">
-    <a href="">Impresssum</a>
+    <router-link to="Impressum">Impressum</router-link>
+    <router-link to="Datenschutz">Datenschutz</router-link>
     <a
       target="_blank"
       rel="noopener noreferrer"
       href="https://github.com/niklasluehr"
       >GitHub</a
     >
-    <a href="">Instagram</a>
   </footer>
 
   <!-- ------ -->
