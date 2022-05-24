@@ -3,12 +3,12 @@
     <section class="hero">
       <img src="@/assets/me.jpg" alt="Me" />
       <div class="hero-text">
-        <h1>I bring your business to the next level!</h1>
+        <h1>{{ t('hero.slogan') }}</h1>
         <hr />
         <p>Web Design &amp; Development</p>
         <div class="scroll-container" v-on:click="scrollToWork">
           <div class="scroll-cta"></div>
-          <span>see work</span>
+          <span>{{ t('hero.show_work')}}</span>
         </div>
       </div>
     </section>
@@ -17,32 +17,30 @@
       <section class="work-example">
         <img src="@/assets/dance.png" alt="dance2diz screenshot" />
         <div class="work-text">
-          <h2>dance2diz</h2>
-          <p>Landing Page for Breakdance School</p>
+          <h2>{{ t('projects.dance2diz.name')}}</h2>
+          <p>{{ t('projects.dance2diz.subtitle')}}</p>
           <ul>
-            <li>train special keys used in programming</li>
-            <li>track time and words per minute</li>
-            <li>user account management</li>
-            <li>global leaderboards</li>
+            <li>{{ t('projects.dance2diz.bullet_points.b1') }}</li>
+            <li>{{ t('projects.dance2diz.bullet_points.b2') }}</li>
+            <li>{{ t('projects.dance2diz.bullet_points.b3') }}</li>
           </ul>
         </div>
       </section>
       <section class="work-example">
         <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
         <div class="work-text">
-          <h2>codefast.app</h2>
-          <p>touch typing trainer for coders</p>
+          <h2>{{ t('projects.codefast.name')}}</h2>
+          <p>{{ t('projects.codefast.subtitle')}}</p>
           <ul>
-            <li>train special keys used in programming</li>
-            <li>track time and words per minute</li>
-            <li>user account management</li>
-            <li>global leaderboards</li>
+            <li>{{ t('projects.codefast.bullet_points.b1') }}</li>
+            <li>{{ t('projects.codefast.bullet_points.b2') }}</li>
+            <li>{{ t('projects.codefast.bullet_points.b3') }}</li>
           </ul>
         </div>
       </section>
     </section>
 
-    <section class="testimonials">
+    <!-- <section class="testimonials">
       <Swiper
         class="testimonial-swiper"
         :modules="modules"
@@ -83,26 +81,30 @@
           <p>deeplearning.ai</p>
         </SwiperSlide>
       </Swiper>
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, A11y } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/vue";
+// import { Pagination, A11y } from "swiper";
 import "swiper/css/bundle";
-import { VueScreenSizeMixin } from "vue-screen-size";
+// import { VueScreenSizeMixin } from "vue-screen-size";
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: "Home",
-  components: { Swiper, SwiperSlide },
-  mixins: [VueScreenSizeMixin],
+  // components: { Swiper, SwiperSlide },
+  // mixins: [VueScreenSizeMixin],
   data() {
     return {};
   },
   setup() {
+    const { t } = useI18n()
+
     return {
-      modules: [Pagination, A11y],
+      // modules: [Pagination, A11y],
+      t
     };
   },
   methods: {

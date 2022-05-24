@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "work": "projekte",
+    "about": "über",
+    "contact": "kontakt"
+  },
+  "hero": {
+    "slogan": "Ich bringe Ihre Website aufs nächste Level!",
+    "show_work": "Projekte ansehen"
+  },
+  "projects": {
+    "dance2diz": {
+      "name": "dance2diz",
+      "subtitle": "Landing Page für Breakdance Schule",
+      "bullet_points": {
+        "b1": "Ein wichtiges Detail",
+        "b2": "Ein weiterer zentraler Punkt",
+        "b3": "Und noch viel mehr geile Dinge"
+      }
+    },
+    "codefast": {
+      "name": "codefast.app",
+      "subtitle": "10-Finger-Tipptrainer für Programmierer",
+      "bullet_points": {
+        "b1": "Tipptraining mit Fokus auf Sonderzeichen",
+        "b2": "WPM (words per minute) und Zeit tracken",
+        "b3": "Fehler analysieren"
+      }
+    }
+  },
+  "about_quote": "Ich studiere aktuell Informatik im Master an der LMU München. Ich bin fasziniert von Computern und vom Programmieren, seit mein Opa mir beigebracht hat, wie man einfache Programme in BASIC schreibt. In meiner Freizeit mache ich gerne Sport und erkunde die Welt.",
+  "education": {
+    "title": "bildung",
+    "bachelor": "B.Sc. Informatik (1,34)",
+    "bachelor_thesis": "Bachelorarbeit “Automatische Bewertung von Tramplinroutinen”: Bewertung von Trampolinathleten bei Olympia anhand von Videos mittels Deep Learning",
+    "abitur": "Abitur (1,5)"
+  },
+  "skills": {
+    "title": "skills"
+  },
+  "interests": {
+    "title": "interessen",
+    "deep_learning": "Deep Learning, AI",
+    "sports": "Turnen, Breakdance, Fitness",
+    "pers_dev": "Persönlichkeitsentwicklung"
+  }
+}

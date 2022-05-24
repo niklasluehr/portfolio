@@ -7,12 +7,12 @@
     <nav>
       <ul>
         <li>
-          <router-link to="/">work</router-link>
+          <router-link to="/">{{ t("nav.work") }}</router-link>
         </li>
         <li>
-          <router-link to="/about">about</router-link>
+          <router-link to="/about"> {{ t("nav.about") }}</router-link>
         </li>
-        <ActionButton label="contact me" @click="$emit('openContactForm')" />
+        <ActionButton :label="t('nav.contact')" @click="$emit('openContactForm')" />
       </ul>
     </nav>
 
@@ -27,10 +27,14 @@
   <nav class="mobile-menu" :style="{ left: mobileMenuLeft }">
     <ul>
       <li>
-        <router-link @click="toggleMobileMenu" to="/">work</router-link>
+        <router-link @click="toggleMobileMenu" to="/">{{
+          t("nav.work")
+        }}</router-link>
       </li>
       <li>
-        <router-link @click="toggleMobileMenu" to="/about">about</router-link>
+        <router-link @click="toggleMobileMenu" to="/about">{{
+          t("nav.about")
+        }}</router-link>
       </li>
     </ul>
     <Icon
@@ -44,6 +48,7 @@
 <script>
 import { Icon } from "@iconify/vue";
 import ActionButton from "@/components/ActionButton.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
   name: "TheNavBar",
@@ -52,6 +57,13 @@ export default {
     ActionButton,
   },
   emits: ["openContactForm", "mobileMenuToggled"],
+  setup() {
+    const { t } = useI18n();
+
+    return {
+      t,
+    };
+  },
   data() {
     return {
       mobileMenuVisible: false,

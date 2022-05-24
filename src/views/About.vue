@@ -1,27 +1,21 @@
 <template>
   <div class="about">
     <section class="personal">
-      <img src="@/assets/me.jpg" alt="Me" />
+      <img src="@/assets/me-2.jpg" alt="Me" />
 
       <blockquote>
         <span class="left-quote">"</span>
-        I’m a computer science student from Munich, currently doing my Masters
-        degree at LMU. I’ve been passionate about computers and programming ever
-        since my grandpa taught my how to write simple programs in BASIC.
+        {{ t("about_quote") }}
         <span class="right-quote">"</span>
       </blockquote>
     </section>
     <section class="block-section">
       <div class="block">
-        <h2>education</h2>
+        <h2>{{ t("education.title") }}</h2>
         <ul>
-          <li><b>2021</b> B.Sc. Computer Science (1.34)</li>
-          <li>
-            <b>2021</b> Bachelor Thesis “Action Quality Assessment of Trampline
-            Routines”: Automatically judging the Olympic Trampoline event from
-            videos with Deep Learning
-          </li>
-          <li><b>2016</b> Abitur (1.5)</li>
+          <li><b>2021 </b>{{ t("education.bachelor") }}</li>
+          <li><b>2021 </b>{{ t("education.bachelor_thesis") }}</li>
+          <li><b>2016 </b>{{ t("education.abitur") }}</li>
         </ul>
       </div>
       <div class="block">
@@ -33,16 +27,30 @@
         </ul>
       </div>
       <div class="block">
-        <h2>interests</h2>
+        <h2>{{ t('interests.title') }}</h2>
         <ul>
-          <li>Deep Learning, AI</li>
-          <li>Sports: Gymnasctics, Breakdance, Fitness</li>
-          <li>Personal Development</li>
+          <li>{{ t('interests.deep_learning') }}</li>
+          <li>{{ t('interests.sports') }}</li>
+          <li>{{ t('interests.pers_dev') }}</li>
         </ul>
       </div>
     </section>
   </div>
 </template>
+
+<script>
+import { useI18n } from "vue-i18n";
+
+export default {
+  setup() {
+    const { t } = useI18n();
+
+    return {
+      t,
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 .personal {
@@ -151,8 +159,8 @@
     gap: 8em;
 
     img {
-      width: 40%;
-      min-width: 40%;
+      width: 45%;
+      min-width: 45%;
     }
 
     blockquote {

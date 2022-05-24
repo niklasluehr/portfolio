@@ -12,10 +12,11 @@
   <router-view />
 
   <div id="message-button" class="clickable" @click="toggleContactForm">
-    <Icon icon="bx:bx-mail-send"/>
+    <Icon icon="bx:bx-mail-send" />
   </div>
 
-  <footer :style="{ background: footerBackground}">
+  <!-- <footer :style="{ background: footerBackground}"> -->
+  <footer>
     <router-link to="Impressum">Impressum</router-link>
     <router-link to="Datenschutz">Datenschutz</router-link>
     <a
@@ -83,7 +84,7 @@ export default {
     },
     footerBackground() {
       return this.$route.name == "About" ? "var(--background2)" : "unset";
-    }
+    },
   },
   mounted() {
     document.onkeydown = (event) => {
@@ -154,6 +155,7 @@ footer {
   justify-content: center;
   display: flex;
   gap: 2em;
+  background: var(--background2);
 }
 
 #modal-bg {
