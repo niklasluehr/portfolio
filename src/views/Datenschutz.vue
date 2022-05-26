@@ -128,7 +128,7 @@
     </p>
 
     <p>
-      Telefon: &#91;Telefonnummer der verantwortlichen Stelle&#93;<br />
+      <!-- Telefon: &#91;Telefonnummer der verantwortlichen Stelle&#93;<br /> -->
       E-Mail: info@niklasluehr.com
     </p>
     <p>
@@ -417,6 +417,14 @@
     </p>
   </div>
 </template>
+
+<script>
+export default {
+  setup() {
+    window.scrollTo(0, 0);
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .datenschutz {

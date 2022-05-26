@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/impressum',
     name: 'Impressum',
-    component: Impressum
+    component: Impressum,
   },
   {
     path: '/datenschutz',

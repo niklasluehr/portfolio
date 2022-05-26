@@ -4,6 +4,13 @@
     "about": "about",
     "contact": "contact me"
   },
+  "contact": {
+    "slogan": "let's get this done!",
+    "name_ph": "Your Name",
+    "mail_ph": "Your Mail Address",
+    "message": "message",
+    "message_ph": "How can I help you?"
+  },
   "hero": {
     "slogan": "I bring your website to the next level!",
     "show_work": "show work"

@@ -4,7 +4,7 @@
     @submit.prevent="handleSubmit"
     :class="{ visible: isVisible }"
   >
-    <h1>let's get this done!</h1>
+    <h1>{{ t("contact.slogan") }}</h1>
     <Icon
       class="clickable closeIcon"
       @click="toggleContactForm"
@@ -18,7 +18,7 @@
       id="name"
       name="name"
       v-model="name"
-      placeholder="Ihr Name"
+      :placeholder="t('contact.name_ph')"
     /><br />
     <label for="email">e-mail</label><br />
     <input
@@ -27,15 +27,16 @@
       id="email"
       name="email"
       v-model="email"
-      placeholder="Ihre E-Mail"
+      :placeholder="t('contact.mail_ph')"
     /><br />
-    <label for="message">nachricht</label><br />
+    <label for="message">{{ t("contact.message") }}</label
+    ><br />
     <textarea
       id="message"
       required
       name="message"
       v-model="message"
-      placeholder="Ihre Nachricht"
+      :placeholder="t('contact.message_ph')"
     /><br />
     <ActionButton label="senden"></ActionButton>
   </form>
@@ -44,6 +45,7 @@
 <script>
 import { Icon } from "@iconify/vue";
 import ActionButton from "@/components/ActionButton.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
   components: {
@@ -51,6 +53,13 @@ export default {
     Icon,
   },
   emits: ["contactFormToggled"],
+  setup() {
+    const { t } = useI18n();
+
+    return {
+      t,
+    };
+  },
   data() {
     return {
       isVisible: false,
@@ -61,7 +70,12 @@ export default {
   },
   methods: {
     handleSubmit() {
-      //TODO
+      // TODO
+      // Klick auf senden:
+      // Button verwandelt sich in Ladeanimation
+      // Eingabefelder werden zurückgesetzt
+      // Dialog zeigt Erfolgsnachricht
+      // bei neuem öffnen des formulars wird wieder leeres formular angezeigt
       this.toggleContactForm();
     },
     toggleContactForm() {

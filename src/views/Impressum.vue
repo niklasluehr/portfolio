@@ -40,6 +40,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  setup() {
+    window.scrollTo(0, 0);
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .impressum {
   font-family: "Helvetica";

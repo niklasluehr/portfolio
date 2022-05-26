@@ -13,17 +13,19 @@
       <div class="block">
         <h2>{{ t("education.title") }}</h2>
         <ul>
-          <li><b>2021 </b>{{ t("education.bachelor") }}</li>
-          <li><b>2021 </b>{{ t("education.bachelor_thesis") }}</li>
-          <li><b>2016 </b>{{ t("education.abitur") }}</li>
+          <li><b>{{ t("education.master_pre") + " " }} </b>{{ t("education.master") }}</li>
+          <li><b>2021  </b>{{ t("education.bachelor") }}</li>
+          <li><b>2021  </b>{{ t("education.bachelor_thesis") }}</li>
+          <li><b>2016  </b>{{ t("education.abitur") }}</li>
         </ul>
       </div>
       <div class="block">
         <h2>skills</h2>
         <ul>
           <li>Java</li>
-          <li>Node, Vue, React</li>
-          <li>Python &amp; Pytorch</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Node, Vue, (React)</li>
+          <li>Python &amp; PyTorch</li>
         </ul>
       </div>
       <div class="block">
@@ -98,7 +100,7 @@ export default {
     padding: 1em;
     h2 {
       margin: 0;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.4em;
       font-size: 1.25rem;
       color: var(--accent);
     }
@@ -107,7 +109,7 @@ export default {
       list-style-type: none;
     }
     li {
-      padding: 0.1em 0em;
+      padding: 0.2em 0em;
     }
     li::before {
       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
