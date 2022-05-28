@@ -104,9 +104,8 @@ export default {
   text-align: left;
 
   h1 {
-    margin: 0;
-    margin-bottom: 0.66em;
-    font-size: 1.5rem;
+    margin: 0em 1.25em 0.66em 0em;
+    font-size: 1.25rem;
   }
 
   label {

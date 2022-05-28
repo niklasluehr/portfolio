@@ -16,9 +16,20 @@
 
 .closeIcon {
   position: absolute;
-  top: .5em;
-  right: .5em;
+  top: .3em;
+  right: .3em;
   font-size: 2.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .closeIcon {
+    top: .5em;
+    right: .5em;
+  }
+}
+
+.closeIcon:active {
+  transform: scale(1.1);
 }
 
 a {

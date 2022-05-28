@@ -3,12 +3,12 @@
     <section class="hero">
       <img src="@/assets/me.jpg" alt="Me" />
       <div class="hero-text">
-        <h1>{{ t('hero.slogan') }}</h1>
+        <h1>{{ t("hero.slogan") }}</h1>
         <hr />
         <p>Web Design &amp; Development</p>
         <div class="scroll-container" v-on:click="scrollToWork">
           <div class="scroll-cta"></div>
-          <span>{{ t('hero.show_work')}}</span>
+          <span>{{ t("hero.show_work") }}</span>
         </div>
       </div>
     </section>
@@ -17,24 +17,28 @@
       <section class="work-example">
         <img src="@/assets/dance.png" alt="dance2diz screenshot" />
         <div class="work-text">
-          <h2>{{ t('projects.dance2diz.name')}}</h2>
-          <p>{{ t('projects.dance2diz.subtitle')}}</p>
+          <h2>{{ t("projects.dance2diz.name") }}</h2>
+          <p>{{ t("projects.dance2diz.subtitle") }}</p>
           <ul>
-            <li>{{ t('projects.dance2diz.bullet_points.b1') }}</li>
-            <li>{{ t('projects.dance2diz.bullet_points.b2') }}</li>
-            <li>{{ t('projects.dance2diz.bullet_points.b3') }}</li>
+            <li>{{ t("projects.dance2diz.bullet_points.b1") }}</li>
+            <li>{{ t("projects.dance2diz.bullet_points.b2") }}</li>
+            <li>{{ t("projects.dance2diz.bullet_points.b3") }}</li>
           </ul>
         </div>
       </section>
       <section class="work-example">
-        <img src="@/assets/codefast.png" alt="codefast.app screenshot" />
+        <!-- <img src="@/assets/codefast.png" alt="codefast.app screenshot" /> -->
+        <video autoplay muted loop>
+          <source src="@/assets/codefast_demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div class="work-text">
-          <h2>{{ t('projects.codefast.name')}}</h2>
-          <p>{{ t('projects.codefast.subtitle')}}</p>
+          <h2>{{ t("projects.codefast.name") }}</h2>
+          <p>{{ t("projects.codefast.subtitle") }}</p>
           <ul>
-            <li>{{ t('projects.codefast.bullet_points.b1') }}</li>
-            <li>{{ t('projects.codefast.bullet_points.b2') }}</li>
-            <li>{{ t('projects.codefast.bullet_points.b3') }}</li>
+            <li>{{ t("projects.codefast.bullet_points.b1") }}</li>
+            <li>{{ t("projects.codefast.bullet_points.b2") }}</li>
+            <li>{{ t("projects.codefast.bullet_points.b3") }}</li>
           </ul>
         </div>
       </section>
@@ -90,7 +94,7 @@
 // import { Pagination, A11y } from "swiper";
 import "swiper/css/bundle";
 // import { VueScreenSizeMixin } from "vue-screen-size";
-import { useI18n } from 'vue-i18n'
+import { useI18n } from "vue-i18n";
 
 export default {
   name: "Home",
@@ -100,11 +104,11 @@ export default {
     return {};
   },
   setup() {
-    const { t } = useI18n()
+    const { t } = useI18n();
 
     return {
       // modules: [Pagination, A11y],
-      t
+      t,
     };
   },
   methods: {
@@ -242,7 +246,7 @@ export default {
     flex-direction: column;
     justify-content: center;
 
-    img {
+    img,video {
       width: 100%;
       margin-bottom: 1em;
     }
@@ -253,6 +257,11 @@ export default {
         font-size: 1.5rem;
         color: var(--accent);
         font-weight: bold;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
       }
 
       p {
@@ -379,11 +388,12 @@ export default {
         gap: 3em;
       }
 
-      img {
+      img,
+      video {
         width: 60%;
         min-width: 60%;
         margin-bottom: 0;
-        object-fit: cover;
+        /* object-fit: cover; */
       }
     }
   }
@@ -405,7 +415,6 @@ export default {
 @media only screen and (min-width: 950px) {
   .hero {
     .hero-text {
-
       h1 {
         font-size: 2rem;
       }
