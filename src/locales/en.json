@@ -9,7 +9,13 @@
     "name_ph": "Your Name",
     "mail_ph": "Your Mail Address",
     "message": "message",
-    "message_ph": "How can I help you?"
+    "message_ph": "How can I help you?",
+    "button_label": "send",
+    "button_label_active": "sending...",
+    "success": "Thank you for your request! I will come back to you soon.",
+    "error": "Sorry. Something went wrong.",
+    "error_sub": "Please try again or contact me directly per ",
+    "error_mail": "e-mail"
   },
   "hero": {
     "slogan": "I bring your into the digital world!",
@@ -45,7 +51,7 @@
     "bachelor_thesis": "Bachelor Thesis “Action Quality Assessment of Trampline Routines”: Automatically judging the Olympic Trampoline event from videos with Deep Learning",
     "abitur": "Abitur (1.5) TODO"
   },
-   "skills": {
+  "skills": {
     "title": "skills"
   },
   "interests": {

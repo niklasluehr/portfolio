@@ -9,7 +9,14 @@
     "name_ph": "Ihr Name",
     "mail_ph": "Ihre E-Mail Adresse",
     "message": "nachricht",
-    "message_ph": "Wie kann ich Ihnen helfen?"
+    "message_ph": "Wie kann ich Ihnen helfen?",
+    "button_label": "senden",
+    "button_label_active": "wird gesendet...",
+    "success": "Vielen Dank für Ihre Anfrage!",
+    "success_sub": "Ich melde mich bald bei Ihnen.",
+    "error": "Sorry. Das hat nicht funktioniert.",
+    "error_sub": "Bitte versuchen Sie es nochmal oder kontaktieren Sie mich direkt per ",
+    "error_mail": "E-Mail"
   },
   "hero": {
     "slogan": "Ich bringe Ihre Idee in die Digitale Welt!",
