@@ -10,7 +10,7 @@
       </blockquote>
     </section>
     <section class="block-section">
-      <div class="block">
+      <div class="block extra-spacing">
         <h2>{{ t("education.title") }}</h2>
         <ul>
           <li><b>{{ t("education.master_pre") + " " }} </b>{{ t("education.master") }}</li>
@@ -109,7 +109,7 @@ export default {
       list-style-type: none;
     }
     li {
-      padding: 0.2em 0em;
+      padding: 0.1em 0em;
     }
     li::before {
       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
@@ -118,6 +118,12 @@ export default {
       display: inline-block; /* Needed to add space between the bullet and the text */
       width: 1.6em; /* Also needed for space (tweak if needed) */
       margin-left: -1.6em; /* Also needed for space (tweak if needed) */
+    }
+  }
+
+  .extra-spacing {
+    li {
+      padding: 0.2em 0em;
     }
   }
 }

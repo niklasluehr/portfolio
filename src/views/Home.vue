@@ -14,7 +14,7 @@
     </section>
 
     <section class="work">
-      <section class="work-example">
+      <!-- <section class="work-example">
         <img src="@/assets/dance.png" alt="dance2diz screenshot" />
         <div class="work-text">
           <h2>{{ t("projects.dance2diz.name") }}</h2>
@@ -25,15 +25,28 @@
             <li>{{ t("projects.dance2diz.bullet_points.b3") }}</li>
           </ul>
         </div>
-      </section>
+      </section> -->
       <section class="work-example">
         <!-- <img src="@/assets/codefast.png" alt="codefast.app screenshot" /> -->
-        <video autoplay muted loop>
+        <video class="preview" autoplay muted loop>
           <source src="@/assets/codefast_demo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div class="work-text">
-          <h2>{{ t("projects.codefast.name") }}</h2>
+          <div class="project-title">
+            <h2>{{ t("projects.codefast.name") }}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://codefast.app"
+            >
+              <img
+                src="@/assets/external_link.svg"
+                class="icon-link"
+                alt="open link"
+              />
+            </a>
+          </div>
           <p>{{ t("projects.codefast.subtitle") }}</p>
           <ul>
             <li>{{ t("projects.codefast.bullet_points.b1") }}</li>
@@ -42,6 +55,7 @@
           </ul>
         </div>
       </section>
+      <h3 class="work-in-progress">{{ t("projects.work_in_progress") }}</h3>
     </section>
 
     <!-- <section class="testimonials">
@@ -180,10 +194,15 @@ export default {
         font-size: 1.2rem;
         padding-left: 0.5em;
         font-weight: bold;
+        transition: .3s;
       }
 
       &:hover {
         cursor: pointer;
+
+        span {
+          transform: translateY(2px);
+        }
       }
 
       .scroll-cta {
@@ -238,29 +257,47 @@ export default {
 }
 
 .work {
-  padding: var(--margin-mobile);
+  padding: 3em var(--margin-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 7em;
 
   .work-example {
-    height: max(100vh, 100vw);
+    /* height: max(100vh, 100vw); */
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    img,video {
+    .preview {
       width: 100%;
       margin-bottom: 1em;
     }
 
     .work-text {
-      h2 {
-        margin: 0;
-        font-size: 1.5rem;
-        color: var(--accent);
-        font-weight: bold;
+      .project-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7em;
 
-        &:hover {
-          cursor: pointer;
-          text-decoration: underline;
+        h2 {
+          margin: 0;
+          font-size: 1.5rem;
+          color: var(--accent);
+        }
+
+        a {
+          display: flex;
+          /* align-items: center; */
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          .icon-link {
+            padding-top: 2px;
+            height: 1.6rem;
+          }
         }
       }
 
@@ -284,6 +321,13 @@ export default {
       }
     }
   }
+}
+
+.work-in-progress {
+  color: var(--accent);
+  margin-top: 0;
+  margin-bottom: 3em;
+  justify-self: center;
 }
 
 .testimonials {
@@ -370,9 +414,6 @@ export default {
 
   .work {
     padding: 3em var(--margin-tablet);
-    display: flex;
-    flex-direction: column;
-    gap: 5em;
 
     .work-example {
       height: unset;
@@ -388,8 +429,13 @@ export default {
         gap: 3em;
       }
 
-      img,
-      video {
+      .work-text {
+        .project-title {
+          justify-content: flex-start;
+        }
+      }
+
+      .preview {
         width: 60%;
         min-width: 60%;
         margin-bottom: 0;

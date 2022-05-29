@@ -154,18 +154,24 @@ export default {
     }
 
     nav {
-      display: flex;
+      display: unset;
 
       ul {
         display: flex;
+        justify-content: space-between;
+        width: 21rem;
         align-items: center;
-        gap: 3em;
         list-style-type: none;
         margin: 0;
         padding: 0;
 
         a {
           font-size: 1.25rem;
+          display: inline-block;
+
+          &:hover {
+            transform: translateY(-1px);
+          }
 
           &.router-link-exact-active {
             font-weight: bold;

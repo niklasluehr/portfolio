@@ -28,8 +28,12 @@
   }
 }
 
-.closeIcon:active {
+.closeIcon:hover {
   transform: scale(1.1);
+}
+
+.closeIcon:active {
+  transform: scale(1.2);
 }
 
 a {

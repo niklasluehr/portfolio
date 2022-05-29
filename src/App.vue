@@ -141,8 +141,12 @@ body {
     outline: 2px solid var(--primary);
   }
 
-  &:active {
+  &:hover {
     transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1.2);
   }
   svg {
     font-size: 1.5rem;
@@ -156,6 +160,15 @@ footer {
   display: flex;
   gap: 2em;
   background: var(--background2);
+
+  > a {
+    display: inline-block;
+
+    &:hover {
+      transform: translateY(-1px);
+      /* font-weight: bold; */
+    }
+  }
 }
 
 #modal-bg {

@@ -145,6 +145,10 @@ export default {
     // bottom: 2.5em;
     left: 50%;
     transform: translateX(-50%);
+
+    &:hover {
+      transform: translate(-50%, -1px);
+    }
   }
 
   &.visible {
@@ -181,13 +185,6 @@ export default {
     textarea {
       height: 12em;
       resize: none;
-    }
-
-    button {
-      position: relative;
-      // bottom: 2.5em;
-      left: 50%;
-      transform: translateX(-50%);
     }
 
     &.visible {

@@ -42,6 +42,10 @@ button {
     outline: 2px solid var(--primary);
   }
 
+  &:hover {
+    transform: translateY(-1px);
+  }
+
   &:active {
     transform: scale(1.1);
   }
