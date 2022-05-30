@@ -12,7 +12,10 @@
         <li>
           <router-link to="/about"> {{ t("nav.about") }}</router-link>
         </li>
-        <ActionButton :label="t('nav.contact')" @click="$emit('openContactForm')" />
+        <ActionButton
+          :label="t('nav.contact')"
+          @click="$emit('openContactForm')"
+        />
       </ul>
     </nav>
 
@@ -192,7 +195,7 @@ export default {
 
     nav {
       ul {
-        gap: 4.6em;
+        width: 25rem;
       }
     }
   }

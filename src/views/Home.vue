@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <section class="hero">
-      <img src="@/assets/me.jpg" alt="Me" />
+      <img src="@/assets/me_small.jpg" alt="a picture of me" />
       <div class="hero-text">
         <h1>{{ t("hero.slogan") }}</h1>
         <hr />

@@ -15,8 +15,7 @@
     <Icon icon="bx:bx-mail-send" />
   </div>
 
-  <!-- <footer :style="{ background: footerBackground}"> -->
-  <footer>
+  <footer :style="{ background: footerBackground}">
     <router-link to="Impressum">Impressum</router-link>
     <router-link to="Datenschutz">Datenschutz</router-link>
     <a
@@ -83,7 +82,8 @@ export default {
       // return "100vh";
     },
     footerBackground() {
-      return this.$route.name == "About" ? "var(--background2)" : "unset";
+      const currentRoute = this.$route.name;
+      return currentRoute == "About" || currentRoute == "Home" ? "var(--background2)" : "unset";
     },
   },
   mounted() {

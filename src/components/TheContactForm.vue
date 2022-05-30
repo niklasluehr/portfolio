@@ -109,6 +109,10 @@ export default {
             this.submitSuccesful = true;
             this.showAfterSubmitMessage = true;
             this.isSending = false;
+            
+            this.name = "";
+            this.email = "";
+            this.message = "";
           },
           () => {
             this.submitSuccesful = false;

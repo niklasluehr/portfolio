@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <section class="personal">
-      <img src="@/assets/me-2.jpg" alt="Me" />
+      <img src="@/assets/me2_small.jpg" alt="a picture of me" />
 
       <blockquote>
         <span class="left-quote">"</span>
