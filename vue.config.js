@@ -1,6 +1,6 @@
 module.exports = {
   transpileDependencies: true,
-  publicPath: '/portfolio/',
+  publicPath: '/',
 
   pluginOptions: {
     i18n: {
