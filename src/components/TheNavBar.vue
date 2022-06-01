@@ -1,13 +1,13 @@
 <template>
   <div class="navbar">
-    <router-link to="/" class="logo clickable">niklas luehr</router-link>
+    <router-link to="/home" class="logo clickable">niklas luehr</router-link>
 
     <Icon icon="bx:bx-menu" class="clickable" @click="toggleMobileMenu" />
 
     <nav>
       <ul>
         <li>
-          <router-link to="/">{{ t("nav.work") }}</router-link>
+          <router-link to="/home">{{ t("nav.work") }}</router-link>
         </li>
         <li>
           <router-link to="/about"> {{ t("nav.about") }}</router-link>
@@ -30,7 +30,7 @@
   <nav class="mobile-menu" :style="{ left: mobileMenuLeft }">
     <ul>
       <li>
-        <router-link @click="toggleMobileMenu" to="/">{{
+        <router-link @click="toggleMobileMenu" to="/home">{{
           t("nav.work")
         }}</router-link>
       </li>

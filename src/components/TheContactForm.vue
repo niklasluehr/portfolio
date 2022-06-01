@@ -243,8 +243,8 @@ export default {
 
 @media only screen and (min-width: 768px) {
   .modal {
-    width: 34em;
-    height: 45rem;
+    width: 34rem;
+    height: 43rem;
     padding: 3em;
     border: 3px solid var(--accent);
     box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.29);
