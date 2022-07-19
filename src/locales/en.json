@@ -48,9 +48,9 @@
     "title": "education",
     "master_pre": "currently",
     "master": "M.Sc. Computer Science",
-    "bachelor": "B.Sc. Computer Science (1.34)",
+    "bachelor": "B.Sc. Computer Science (GPA 3.8)",
     "bachelor_thesis": "Bachelor Thesis “Action Quality Assessment of Trampline Routines”: Automatically judging the Olympic Trampoline event from videos with Deep Learning",
-    "abitur": "Abitur (1.5)"
+    "abitur": "Abitur"
   },
   "skills": {
     "title": "skills"
